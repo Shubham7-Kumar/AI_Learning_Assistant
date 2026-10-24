@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quietly Learn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/"><span class="brand-mark">✦</span> quietly learn</a>
+        <span class="status"><span class="status-dot"></span> your calm study space</span>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow">A little clarity, one step at a time</p>
+        <h1>What would you like<br /><em>to understand?</em></h1>
+        <p class="intro">Bring your notes, ask a question, and learn at your own pace.</p>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar">
+          <div class="side-heading"><h2>Your notes</h2><span id="file-count">0 files</span></div>
+          <label class="dropzone" id="dropzone" for="file-input">
+            <span class="upload-icon">↑</span>
+            <strong>Drop notes here</strong>
+            <span>or choose TXT, MD, or PDF</span>
+            <input id="file-input" type="file" accept=".txt,.md,.pdf" multiple />
+          </label>
+          <p class="upload-note">For this lightweight MVP, use smaller notes: each file can be up to 2 MB. GPT-OSS 20B supports a 131,072-token context, but focused notes give more reliable answers.</p>
+          <div id="file-list" class="file-list"><p class="empty">Your uploaded notes<br />will appear here.</p></div>
+          <button id="clear-button" class="text-button hidden" type="button">Clear all notes</button>
+        </aside>
+
+        <section class="content">
+          <div id="welcome" class="welcome">
+            <span class="welcome-icon">☼</span>
+            <h2>Start wherever feels right.</h2>
+            <p>Upload study notes or choose a prompt below. There is no wrong place to begin.</p>
+          </div>
+          <div id="answer" class="answer hidden"></div>
+          <form id="question-form" class="question-form">
+            <textarea id="question" rows="2" maxlength="2000" placeholder="Ask anything about your notes..."></textarea>
+            <button type="submit" aria-label="Ask question">→</button>
+          </form>
+          <div class="suggestions">
+            <p>Try asking</p>
+            <div class="suggestion-list">
+              <button type="button">Give me a gentle summary</button>
+              <button type="button">What are the key ideas?</button>
+              <button type="button">Quiz me on this</button>
+            </div>
+          </div>
+          <p id="error" class="error hidden"></p>
+        </section>
+      </section>
+      <footer>Made for focused moments <span>·</span> Your notes stay in this session</footer>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
